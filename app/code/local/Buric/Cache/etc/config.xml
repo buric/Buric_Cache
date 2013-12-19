@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Buric_Cache>
+            <version>0.1.0</version>
+        </Buric_Cache>
+    </modules>
+    <global>
+        <models>
+            <buric_cache>
+                <class>Buric_Cache_Model</class>
+                <resourceModel>buric_cache_resource</resourceModel>
+            </buric_cache>
+            <buric_cache_resource>
+                <class>Buric_Cache_Model_Resource</class>
+            </buric_cache_resource>
+        </models>
+    </global>
+</config>
