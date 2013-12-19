@@ -9,7 +9,6 @@
         <models>
             <buric_cache>
                 <class>Buric_Cache_Model</class>
-                <resourceModel>buric_cache_resource</resourceModel>
             </buric_cache>
         </models>
     </global>
