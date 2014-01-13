@@ -1,6 +1,8 @@
 <?php
 
 /*
+ * Implementation of the APC driver.
+ *
  * @author  Zvonimir Buric <zvonimir.buric@gmail.com>
  * @link    https://github.com/buric/Buric_Cache
  */
