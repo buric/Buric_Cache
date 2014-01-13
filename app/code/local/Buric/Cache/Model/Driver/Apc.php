@@ -1,5 +1,10 @@
 <?php
 
+/*
+ * @author  Zvonimir Buric <zvonimir.buric@gmail.com>
+ * @link    https://github.com/buric/Buric_Cache
+ */
+
 class Buric_Cache_Model_Driver_Apc implements Buric_Cache_Model_Driver_Interface
 {
     /*
