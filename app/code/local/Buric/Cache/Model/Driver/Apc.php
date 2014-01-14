@@ -41,5 +41,4 @@ class Buric_Cache_Model_Driver_Apc implements Buric_Cache_Model_Driver_Interface
             throw new Exception("APC extension is not enabled.");
         }
     }
-
 }
