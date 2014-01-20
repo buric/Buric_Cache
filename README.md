@@ -7,6 +7,7 @@ without repeated generating of the variable.
 The extension uses APC to save variables.
 From version 0.2.0 you can use [eAccelerator](http://eaccelerator.net/) as caching engine.
 From version 0.3.0 there is a possibility to use [Windows Cache](http://us1.php.net/manual/en/book.wincache.php).
+Default Magento driver has been added in version 0.4.0.
 You can use some other engine (e.g. [Memcache](http://www.php.net/memcache), [Redis](http://redis.io/)), just make sure you create the proper driver (implement ``Buric_Cache_Model_Driver_Interface``)
 
 ##Usage
@@ -20,6 +21,9 @@ $cache = Mage::getSingleton('buric_cache/cache', $eacceleratorDriver);
 /* or */
 $wincacheDriver = Mage::getSingleton('buric_cache/driver_wincache');
 $cache = Mage::getSingleton('buric_cache/cache', $wincacheDriver);
+/* or */
+$mageDriver = Mage::getSingleton('buric_cache/driver_mage');
+$cache = Mage::getSingleton('buric_cache/cache', $mageDriver);
 ```
 ###Saving and retrieving the variable - all in one
 Use ``$cache->registry()`` method to retreive the variable from the cache. If there is no such variable in the cache, it will execute ``$callback`` function and save return value to the cache and return it. You can use ``$ttl`` to specify how long should the variable be in the cache (in seconds). If no ``$ttl`` is supplied (or if the ``$ttl`` is 0), the value will persist until it is removed from the cache manually.
