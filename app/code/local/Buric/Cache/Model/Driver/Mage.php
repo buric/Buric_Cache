@@ -24,11 +24,17 @@ class Buric_Cache_Model_Driver_Mage implements Buric_Cache_Model_Driver_Interfac
     /*
      * Implementation of the registry method for Mage engine.
      */
-    public function registry($key, $callback, $ttl = null) {
+    public function registry($key, $callback, $ttl = 0) {
         $saved = $this->_engine->load($key);
         if($saved) {
             return unserialize($saved);
         }
+
+        // magento cache ttl -> really 0 seconds; convert to null to persist
+        if(!$ttl) {
+            $ttl = null;
+        }
+
         $value = $callback();
         $this->_engine->save(serialize($value), $key, array(), $ttl);
         return $value;
