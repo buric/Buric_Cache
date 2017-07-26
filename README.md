@@ -1,4 +1,4 @@
-#Buric_Cache
+# Buric_Cache
 
 Magento extension for caching variables.
 With this extension you can optimize your code to use the same variable in every request, 
@@ -40,7 +40,7 @@ catch (Exception $e) {
     echo $e->getMessage();
 }
 ```
-####Example: Save a product to the cache
+#### Example: Save a product to the cache
 ```php
 $productId = 3;
 $product = $cache->registry('PRODUCT_' . $productId, function () use ($productId) {
@@ -48,7 +48,7 @@ $product = $cache->registry('PRODUCT_' . $productId, function () use ($productId
 }, 600);
 Zend_Debug::dump($product);
 ```
-####Example: Save a category to the cache
+#### Example: Save a category to the cache
 ```php
 $categoryId = 4;
 $category = $cache->registry('CATEGORY_' . $categoryId, function () use ($categoryId) {
@@ -56,14 +56,14 @@ $category = $cache->registry('CATEGORY_' . $categoryId, function () use ($catego
 });
 Zend_Debug::dump($category);
 ```
-####Example: Save a category collection to the cache
+#### Example: Save a category collection to the cache
 ```php
 $categories = $cache->registry('CATEGORIES', function () {
     return Mage::getModel('catalog/category')->getCollection()->load();
 }, 100);
 Zend_Debug::dump($categories);
 ```
-####Example: Delete a variable from the cache
+#### Example: Delete a variable from the cache
 ```php
 $productId = 3;
 $cache->delete('PRODUCT_' . $productId);
